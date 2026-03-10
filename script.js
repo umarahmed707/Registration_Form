@@ -8,12 +8,9 @@ function register(){
    let username = document.getElementById('username').value;
    let email = document.getElementById('useremail').value;
    let password = document.getElementById('userpassword').value;
-    let confirmPassword = document.getElementById('confirmPassword').value;
+    
 
-    if(password!= confirmPassword){
-        alert("password and confirm password should be same");
-        return;
-    }
+ 
     for(let i=0; i<users.length; i++){
         if(users[i].email == email){
             alert("email already exists");
@@ -27,7 +24,7 @@ function register(){
         username: username,
         email: email,
         password: password,
-        confirmPassword: confirmPassword
+        
     }
     users.push(userobj);
     console.log(users);
@@ -41,27 +38,29 @@ function register(){
 }
 
 function login(){
-    let email = document.getElementById('email').value;
-    let password = document.getElementById('userpassword').value;
+    let useremail = document.getElementById('useremail').value;
+    let userpassword = document.getElementById('userpassword').value;
 
 
     let curentUser = null;
 
      for(let i=0;i<users.length; i++){
-        if(users[i].email == email){
+        if(users[i].email == useremail){
             curentUser = users[i];
             break;
 
      }
-
-     if(curentUser){
-        if(curentUser.password == password){
-            alert("login successful");
-            window.location.pathname = "/login-sigin-test/dashboard.html";   
-        }
-     }else{
-        alert("invalid password");
      }
 
-}
+     if(curentUser){
+        if(curentUser.password == userpassword){
+            alert("login successful");
+            window.location.pathname = "/Registration_Form/dashboard.html";   
+        }
+     else{
+        alert("invalid password");
+     }}else{
+         alert("Account Not Register with this email")
+     }
+ 
 }
