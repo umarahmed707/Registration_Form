@@ -27,7 +27,7 @@ function register(){
         
     }
     alert("registration successful");
-location.window.pathname = "/Registration_Form/login.html";
+window.location.pathname = "/Registration_Form/login.html";
     users.push(userobj);
     console.log(users);
 
