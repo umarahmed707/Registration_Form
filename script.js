@@ -26,6 +26,8 @@ function register(){
         password: password,
         
     }
+    alert("registration successful");
+location.window.pathname = "/Registration_Form/login.html";
     users.push(userobj);
     console.log(users);
 
